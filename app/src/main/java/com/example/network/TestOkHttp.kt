@@ -1,12 +1,15 @@
 package com.example.network
 
 import android.util.Log
+import com.example.network.model.Picture
+import com.google.gson.Gson
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
-import java.io.File
 import java.util.concurrent.TimeUnit
 
 fun main() {
+
+    val gson = Gson()
 
     val httpClient = OkHttpClient.Builder()
         .readTimeout(3, TimeUnit.SECONDS)
@@ -32,5 +35,7 @@ fun main() {
         response = e.stackTrace.toString()
     }
 
+    val responseFromJson = gson.fromJson(response, Picture::class.java)
     println(response)
+
 }
