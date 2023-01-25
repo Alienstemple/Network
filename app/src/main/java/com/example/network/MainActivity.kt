@@ -22,45 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
 
         mainBinding.getBtn.setOnClickListener {
-            initOkhttpClient()
-            initRequest()
-            var responseBody: String = makeGetRequest()
-            mainBinding.resultTv.text = responseBody
-        }
-    }
-
-    private fun initOkhttpClient() {
-        Log.d(TAG, "In init client")
-        httpClient = OkHttpClient.Builder()
-            .readTimeout(3, TimeUnit.SECONDS)
-            .writeTimeout(3, TimeUnit.SECONDS)
-            .cache(Cache(File(this.cacheDir, "http"), 10 * 1024 * 1024))
-            .cookieJar(CookieJar.NO_COOKIES)
-            .addNetworkInterceptor(HttpLoggingInterceptor())
-            .build()
-
-        Log.d(TAG, "Client is ready: ${httpClient}")
-    }
-
-    private fun initRequest() {
-        request = Request.Builder()
-            .url(requestUrl)
-            .build()
-
-        Log.d(TAG, "Request is ready: ${request}")
-    }
-
-    private fun makeGetRequest(): String {
-        try {
-            var resp: Response = httpClient.newCall(request).execute()
-            return if (resp.isSuccessful) {
-                resp.body?.string() ?: "No content"
-            } else {
-                "Response code: ${resp.code}"
-            }
-        } catch (e: java.lang.Exception) {
-            Log.e(TAG, "Get failed!", e)
-            return e.stackTrace.toString()
         }
     }
 
