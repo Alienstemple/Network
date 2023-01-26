@@ -15,11 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding: ActivityMainBinding
     private lateinit var pictureAdapter: PictureAdapter
 
-    private var pictureList: List<Picture> =
-        listOf(
-            Picture(0, 0, "Title1", "url1", "url1"),
-            Picture(0, 0, "Title2 kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk", "url2", "url2"),
-            Picture(0, 0, "Title3", "url3", "url3"))
+    private var pictureList: List<Picture> = emptyList()
 
     private val backgroundHandler: Handler
     private val uiHandler =
@@ -76,6 +72,5 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val TAG = "MainActLog"
-        const val requestUrl = "https://jsonplaceholder.typicode.com/albums/1/photos"
     }
 }
