@@ -76,6 +76,8 @@ class NetworkService {
 
         Log.d(TAG, "${pictureList.indices}")
 
+        uiUpdater().updatePictureRecycler()
+
         // TODO jackson , initialize List
     }
 

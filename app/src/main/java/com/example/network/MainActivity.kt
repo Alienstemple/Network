@@ -4,13 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.network.databinding.ActivityMainBinding
-import com.example.network.model.Picture
-import okhttp3.*
-import okhttp3.logging.HttpLoggingInterceptor
-import java.io.File
-import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding: ActivityMainBinding
@@ -32,8 +26,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
+    companion object MainCompanion : UiUpdater{
         const val TAG = "MainActLog"
         const val requestUrl = "https://jsonplaceholder.typicode.com/albums/1/photos"
+        override fun updatePictureRecycler() {
+            Log.d(TAG, "updatePicture called")
+        }
     }
+
 }
