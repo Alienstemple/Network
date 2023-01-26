@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.network.databinding.PictureItemBinding
 import com.example.network.model.Picture
+import com.squareup.picasso.Picasso
 
 class PictureAdapter(private val pictureList: List<Picture>): RecyclerView.Adapter<PictureAdapter.ViewHolder>() {
 
@@ -31,8 +32,11 @@ class PictureAdapter(private val pictureList: List<Picture>): RecyclerView.Adapt
         fun bind(pictureItem: Picture) = with (pictureItemBinding) {
             Log.d(TAG, "bind() called ${pictureItem.title}")
             headerTv.text = pictureItem.title
-            img1
-            img2
+
+            Picasso.get().load(pictureItem.url)
+                .into(img1)
+            Picasso.get().load(pictureItem.thumbnailUrl)
+                .into(img2)
         }
     }
 
