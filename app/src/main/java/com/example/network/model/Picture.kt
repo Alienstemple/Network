@@ -5,5 +5,5 @@ data class Picture(
     val id: Int,
     val title: String,
     val url: String,
-    val thumbnailUrl: String
+    val thumbnailUrl: String,
 )

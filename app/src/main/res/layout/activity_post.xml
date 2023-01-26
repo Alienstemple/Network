@@ -11,27 +11,27 @@
         android:id="@+id/title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:hint="title" />
+        android:layout_margin="@dimen/margin"
+        android:hint="@string/title" />
 
     <EditText
         android:id="@+id/body_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:hint="body" />
+        android:layout_margin="@dimen/margin"
+        android:hint="@string/body" />
 
     <Button
         android:id="@+id/post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Button" />
+        android:layout_margin="@dimen/margin"
+        android:text="@string/button" />
 
     <TextView
         android:id="@+id/result_post_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="result" />
+        android:layout_margin="@dimen/margin"
+        android:text="@string/result" />
 </LinearLayout>

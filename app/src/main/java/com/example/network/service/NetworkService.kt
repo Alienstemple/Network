@@ -72,7 +72,7 @@ class NetworkService {
         Log.d(TAG, "$response")
 
         // Jackson from json to List
-        pictureList = mapper.readValue(response, object : TypeReference<List<Picture>>(){})
+        pictureList = mapper.readValue(response, object : TypeReference<List<Picture>>() {})
 
         Log.d(TAG, "${pictureList.indices}")
 

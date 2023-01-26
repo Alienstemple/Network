@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Network</string>
     <string name="get">get</string>
+    <string name="post">post</string>
+    <string name="title">title</string>
+    <string name="body">body</string>
+    <string name="button">Button</string>
+    <string name="result">result</string>
 </resources>
