@@ -1,14 +1,15 @@
 package com.example.network
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.network.databinding.ActivityMainBinding
 import com.example.network.model.Picture
+import com.example.network.service.NetworkService
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding: ActivityMainBinding
@@ -47,6 +48,11 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.getBtn.setOnClickListener {
             backgroundHandler.post(getPicturesFromNetwork)
+        }
+
+        mainBinding.postBtn.setOnClickListener {
+            intent = Intent(this, PostActivity::class.java)
+            startActivity(intent)
         }
     }
 

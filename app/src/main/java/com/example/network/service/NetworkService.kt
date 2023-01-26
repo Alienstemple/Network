@@ -1,10 +1,9 @@
-package com.example.network
+package com.example.network.service
 
-import android.os.Handler
-import android.os.HandlerThread
-import android.os.Looper
 import android.util.Log
+import com.example.network.MainActivity
 import com.example.network.model.Picture
+import com.example.network.model.Post
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import okhttp3.CookieJar
@@ -23,6 +22,12 @@ class NetworkService {
             Picture(0, 0, "Title1", "url1", "url1"),
             Picture(0, 0, "Title2 kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk", "url2", "url2"),
             Picture(0, 0, "Title3", "url3", "url3"))
+
+    fun postPost(): Post {
+
+        // TODO network
+        return Post("title1", "body1", 1)
+    }
 
     fun getPictures(): List<Picture> {
         val httpClient = OkHttpClient.Builder()
