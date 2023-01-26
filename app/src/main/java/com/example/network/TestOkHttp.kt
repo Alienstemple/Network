@@ -35,7 +35,5 @@ fun main() {
         response = e.stackTrace.toString()
     }
 
-    val responseFromJson = gson.fromJson(response, Picture::class.java)
-    println(response)
 
 }

@@ -21,18 +21,14 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
-        val pictureList = listOf(
-            Picture(0, 0, "Title1", "url1", "url1"),
-            Picture(0, 0, "Title2 kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk", "url2", "url2"),
-            Picture(0, 0, "Title3", "url3", "url3"))
-        pictureAdapter = PictureAdapter(pictureList)
-
-        mainBinding.pictureRecycle.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        mainBinding.pictureRecycle.adapter = pictureAdapter
 
         mainBinding.getBtn.setOnClickListener {
+            val pictureList = NetworkService().getPictures()
+            pictureAdapter = PictureAdapter(pictureList)
 
+            mainBinding.pictureRecycle.layoutManager =
+                LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            mainBinding.pictureRecycle.adapter = pictureAdapter
         }
     }
 
